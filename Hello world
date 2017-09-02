@@ -5,5 +5,4 @@ public class PrimeiroPrograma { //classe
     public static void main(String[] args) { //metodo
         System.out.println("Olá, mundo!!!");
     }
-    
 }
