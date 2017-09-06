@@ -1,0 +1,24 @@
+//Aula sobre variaveis
+
+class OlaMundo{
+		public static void main(String[]args) {
+			int idadeJoao = 18;
+			int idadeMaria = 21;
+			
+			int soma = idadeJoao + idadeMaria;
+			System.out.println(soma);
+			
+			double pi = 3.1415;
+			double dobroDePi = pi*2;
+			System.out.println(dobroDePi);
+			
+			boolean amigo = true;
+			boolean inimigo = false;
+			
+			boolean maiorDeIdade = idadeJoao > 18;
+			
+			char letra = 'M';
+			String nomeCompleto = "Joao da Silva";
+			System.out.println(nomeCompleto);
+	}
+}
