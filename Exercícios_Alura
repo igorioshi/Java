@@ -1,0 +1,84 @@
+/*Na empresa onde trabalhamos, há tabelas com o quanto foi gasto em cada mês. Para fechar o balanço do primeiro trimestre,
+precisamos somar o gasto total. Sabendo que, em Janeiro, foram gastos 15000 reais, em Fevereiro, 23000 reais e em Março, 17000 reais,
+faça um programa que calcule e imprima o gasto total no trimestre.
+Imprima a variável gastosTrimestre.
+Adicione código (sem alterar as linhas que já existem) na classe anterior para imprimir a média mensal de gasto, 
+criando uma variável mediaMensal junto com uma mensagem.*/
+
+class OlaMundo{
+		public static void main(String[]args) {
+    
+			int gastosJaneiro = 15000;
+			int gastosFevereiro = 23000;
+			int gastosMarco = 17000;
+			int gastosTrimestre = gastosJaneiro + gastosFevereiro + gastosMarco;
+			System.out.println("Soma Trimestral: R$" + gastosTrimestre);
+			
+			int mediaGastos = gastosTrimestre/3;
+			System.out.println("Média mensal: R$" + mediaGastos);
+      
+      }
+------------------------------------------------------------------------------------------------------------------------------------
+/*Utilizando o laço do tipo while, tente imprimir todos os números de 150 (inclusivo) até 300 (exclusivo).
+Faça o laço enquanto esse valor não alcance 300. Dentro do laço não esqueça de imprimir o número e alterá-lo!
+Para isso comece declarando a variável inteira que utilizará, e configure o valor inicial dela.*/
+
+class ImprimeDe150A300{
+		public static void main(String[]args) {
+		int i = 150;
+		
+		while(i <= 300)
+		{
+			System.out.println("Numero: " + i);
+			i=i+1;
+		}
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+
+/*Imprima a soma de 1 até 1000 (inclusive).
+Para isso você deve utilizar alguma variável extra que armazena a soma temporária e aumentá-la a cada novo passo*/
+
+class Soma{
+		public static void main(String[]args) {
+		int soma=0;
+		int i=1;
+		
+		while(i<=1000) {
+			soma=soma + i;
+			i++;
+		}
+    System.out.println("O valor da soma e = " + soma);
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
