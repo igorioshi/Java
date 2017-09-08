@@ -52,12 +52,74 @@ class Soma{
 	}
 }
 ----------------------------------------------------------------------------------------------------------------------------------------
-/**/
+/*Utilizando um laço do tipo for imprima todos os múltiplos de 3, entre 1 e 100.
+Existem duas maneiras tradicionais de resolver este problema.
+Uma delas consiste em fazer o for, e utilizar numero % 3 para descobrir o resto da divisão de um número por 3.*/
 
+	class OlaMundo{
+		public static void main(String[]args) {
+		
+			int i;
+			for(i=1; i<100; i++) {
+				if(i%3 == 0)
+					System.out.println(i+" pertence aos multiplos de 3");
+			}
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+/*Imprima os fatoriais de 1 a 10*/
 
+			int i;
+			int fatorial=1;
+			for(i=1; i<=10; i++) {
+				fatorial = fatorial*i;
+				System.out.println("O fatorial de " +fatorial);
+			}
+-----------------------------------------------------------------------------------------------------------------------------------
+/*No código do exercício anterior, aumente a quantidade de números que terão os fatoriais impressos, até 20, 30, 40.
+Em um determinado momento, além desse cálculo demorar, vai começar a mostrar respostas completamente erradas. Por quê?
+Mude de int para long para ver alguma mudança.*/
 
+	class Fatorial{
+		public static void main(String[]args) {
+		
+			int i;
+			long fatorial=1;
+			for(i=1; i<=40; i++) {
+				fatorial = fatorial*i;
+				System.out.println("O fatorial de "+i+ "=" +fatorial);
+			}
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+/*(opcional) Escreva um programa que, dada uma variável x com algum valor inteiro, (por exemplo 13), 
+temos um novo x de acordo com a seguinte regra:
 
+se x é par, x = x / 2
+se x é ímpar, x = 3 * x + 1
+imprime x
 
+o programa deve parar quando x == 1
+
+Por exemplo, para x = 13 a saída deve ser:
+
+13 > 40 > 20 > 10 > 5 > 16 > 8 > 4 > 2 > 1*/
+
+class OlaMundo{
+	public static void main(String[]args) {
+		
+		int x = 13;
+		while (x != 1) {
+		     System.out.print(x + " > "); //vai imprimir todos desde o inicio
+		     if (x % 2 == 0) {
+		          x = x / 2;
+		     } else {
+		             x =(( 3 * x) + 1);
+		          }
+		     }
+		    System.out.print(x); //vai imprimir o ultimo
+		}
+}
 
 
 
