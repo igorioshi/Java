@@ -1,0 +1,57 @@
+/*Um exemplo de codigo para conta de banco*/
+
+public class Conta {
+	int numero;
+	double saldo;
+	int agencia;
+	Pessoa titular;
+	
+	//criar um metodo (uma funcao)
+	void deposita(double valorDepositado) {
+		this.saldo += valorDepositado;
+	}
+	
+	void saca(double valorSacado) {
+		if(valorSacado <= this.saldo)
+			this.saldo -= valorSacado;
+	}
+	
+	void transfere(double valor, Conta destino) {
+		this.saldo -= valor; 
+		destino.saldo += valor;
+	}
+	
+}
+
+class Pessoa{
+	String nome;
+	String cpf;
+	String dataNascimento;
+}
+
+class Programa{
+	public static void main(String[] args) {
+		Conta igor = new Conta();
+		igor.numero = 123;
+		igor.saldo = 1000;
+		igor.agencia = 001;
+		
+		igor.titular.nome = "Igor Ioshikawa";
+		igor.titular.cpf = "12345678";
+		igor.titular.dataNascimento = "26/04/98";
+		
+		igor.deposita(100);
+		igor.saca(200);
+		
+		Conta mirian =new Conta();
+		mirian.numero =456;
+		mirian.saldo=10000;
+		mirian.agencia=002;
+		
+		mirian.transfere(400, igor);
+		
+		System.out.println(igor.saldo);
+	}
+}
+
+
