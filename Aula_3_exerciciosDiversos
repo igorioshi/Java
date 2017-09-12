@@ -1,0 +1,198 @@
+- Modele um funcionário. Ele deve ter o nome do funcionário, o departamento onde trabalha, seu salário (double), 
+a data de entrada no banco (String) e seu RG (String).
+
+- Você deve criar alguns métodos de acordo com sua necessidade. 
+Além deles, crie um método recebeAumento que aumenta o salario do funcionário de acordo com o parâmetro passado como argumento. 
+Crie também um método calculaGanhoAnual, que não recebe parâmetro algum, devolvendo o valor do salário multiplicado por 12.
+
+class Funcionario {
+    String nome;
+    String departamento;
+    double salario;
+    String dataEntrada;
+    String rg;
+    
+    //Metodos
+    
+    void recebeAumento(double valor){
+        this.salario += valor;
+    }
+    
+    double calculaGanhoAnual(){
+        return this.salario *= 12;
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+- Fazer um programa que possua um metodo 'void mostra()', que mostra todos os atributos do funcionario
+
+public class Funcionario {
+	String nome;
+    String departamento;
+    double salario;
+    String dataEntrada;
+    String rg;
+    
+    //Metodos
+    
+    void mostra() {
+    	System.out.println("Nome: "+ this.nome);
+    	System.out.println("Departamento: "+this.departamento);
+    	System.out.println("Salario: "+this.salario);
+    	System.out.println("Data de Entrada: "+this.dataEntrada);
+    	System.out.println("RG: "+this.rg);
+    }
+}
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+class Teste{
+	public static void main(String[] args) {
+		Funcionario igor = new Funcionario();
+		igor.nome = "igor ioshi";
+		igor.departamento = "TI";
+		igor.salario = 900;
+		igor.dataEntrada = "12/09/17";
+		igor.rg = "1234567";
+		
+		igor.mostra();
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Criar outro funcionario e comparar se seus valores, e diga se sao ou nao iguais 
+
+class Funcionario{
+    String nome;
+    double salario;
+}
+
+class Programa{
+    public static void main(String[] args){
+        Funcionario igor = new Funcionario();
+        igor.nome = "Igor";
+        igor.salario = 100;
+        
+        Funcionario opa = new Funcionario();
+        opa.nome="igor";
+        opa.salario = 100;
+        
+        if(igor == opa)
+        {
+            System.out.println("Sao iguais");
+        }
+        else
+          System.out.println("Sao diferentes");
+    }
+}
+//A resposta sera FALSE (sao diferentes), porque cada objeto eh diferente, mesmo que seus atributos tenham as mesmas informacoes
+//So serao iguas se escrevermos assim: "Funcionario opa = igor;" 
+//ficam iguais pois as mesmas variaveis tem referencia para o mesmo obejto
+
+--------------------------------------------------------------------------------------------------------------------------
+Em vez de utilizar uma String para representar a data, crie uma outra classe, chamada Data. 
+Ela possui 3 campos int, para dia, mês e ano. Faça com que seu funcionário passe a usá-la.
+Modifique sua classe TestaFuncionario para que você crie uma Data e atribua ela ao Funcionario.
+
+class Funcionario{
+    String nome;
+    double salario;
+    Data dataEntrada;
+    
+    void mostra() {
+    	System.out.println("Dia: "+this.dataEntrada.dia); //Metodo para mostrar na tela
+    	System.out.println("Mes: "+this.dataEntrada.mes);
+    	System.out.println("Ano: "+this.dataEntrada.ano);
+    }
+}
+
+class Data{
+	int dia;
+	int mes;
+	int ano;
+	
+	void preencheData(int dia, int mes, int ano){
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+	}
+}
+
+class Teste{
+    public static void main(String[] args){
+        Funcionario igor = new Funcionario();
+        igor.nome = "japa";
+        igor.salario = 100;
+      
+        //adiciona data como tipo
+        igor.dataEntrada = new Data();
+        igor.dataEntrada.preencheData(12, 9, 2017); //metodo para preencher a data
+        
+        igor.mostra();
+        
+        
+    }
+}
+-----------------------------------------------------------------------
+Crie um método chamado getFormatada na classe Data que devolva o valor formatado da data.
+isto é, devolva uma String com "dia/mes/ano". 
+Isso para que o método mostra da classe Funcionario possa ficar assim...
+
+class Funcionario{
+    String nome;
+    double salario;
+    Data dataEntrada;
+    
+    void mostra() {
+    	System.out.println("Dia: "+this.dataEntrada.dia);
+    	System.out.println("Mes: "+this.dataEntrada.mes);
+    	System.out.println("Ano: "+this.dataEntrada.ano);
+    	
+        System.out.println("Data de entrada: "+ this.dataEntrada.getFormata());       //Aqui mudou
+    }
+}
+
+class Data{
+	int dia;
+	int mes;
+	int ano;
+	
+	void preencheData(int dia, int mes, int ano){
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+	}
+	
+	String getFormata() {
+		return this.dia + "/" + this.mes + "/" + this.ano;              //Aqui mudou
+
+	}
+}
+
+class Teste{
+    public static void main(String[] args){
+        Funcionario igor = new Funcionario();
+        igor.nome = "japa";
+        igor.salario = 100;
+      
+        //adiciona data como tipo
+        igor.dataEntrada = new Data();
+        igor.dataEntrada.preencheData(12, 9, 2017);
+        
+        igor.mostra();
+      
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
